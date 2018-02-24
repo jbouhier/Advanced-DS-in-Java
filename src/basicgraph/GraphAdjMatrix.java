@@ -13,7 +13,7 @@ import java.util.Set;
  * The edges of the graph are not labeled.
  * Representation of edges via an adjacency matrix.
  * 
- * @author UCSD MOOC development team and YOU
+ * @author UCSD MOOC development team and Jean-Baptiste Bouhier
  *
  */
 public class GraphAdjMatrix extends Graph {
@@ -21,7 +21,7 @@ public class GraphAdjMatrix extends Graph {
 	private final int defaultNumVertices = 5;
 	private int[][] adjMatrix;
 	
-	/** Create a new empty Graph */
+
 	public GraphAdjMatrix () {
 		adjMatrix = new int[defaultNumVertices][defaultNumVertices];
 	}
@@ -34,7 +34,7 @@ public class GraphAdjMatrix extends Graph {
 	public void implementAddVertex() {
 		int v = getNumVertices();
 		if (v >= adjMatrix.length) {
-			int[][] newAdjMatrix = new int[v*2][v*2];
+			int[][] newAdjMatrix = new int[v * 2][v * 2];
 			for (int i = 0; i < adjMatrix.length; i ++) {
 				for (int j = 0; j < adjMatrix.length; j ++) {
 					newAdjMatrix[i][j] = adjMatrix[i][j];

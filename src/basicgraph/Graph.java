@@ -17,20 +17,17 @@ import util.GraphLoader;
  * The edges of the graph are not labeled.
  * Representation of edges is left abstract.
  * 
- * @author UCSD MOOC development team and YOU
+ * @author UCSD MOOC development team and Jean-Baptiste Bouhier
  * 
  */
-
 public abstract class Graph {
 
 	private int numVertices;
 	private int numEdges;
 	//optional association of String labels to vertices 
-	private Map<Integer,String> vertexLabels;
+	private Map<Integer, String> vertexLabels;
 	
-	/**
-	 * Create a new empty Graph
-	 */
+
 	public Graph() {
 		numVertices = 0;
 		numEdges = 0;
@@ -65,7 +62,7 @@ public abstract class Graph {
 	public int addVertex() {
 		implementAddVertex();
 		numVertices ++;
-		return (numVertices-1);
+		return (numVertices - 1);
 	}
 	
 	/**
@@ -80,9 +77,9 @@ public abstract class Graph {
 	 * @param w Index of the end point of the edge to be added. 
 	 */
 	public void addEdge(int v , int w) {
-		numEdges ++;
+		numEdges++;
 		if (v < numVertices && w < numVertices) {
-			implementAddEdge(v , w);			
+			implementAddEdge(v , w);
 		}
 		else {
 			throw new IndexOutOfBoundsException();
@@ -190,13 +187,10 @@ public abstract class Graph {
 	 * @param s The label to be assigned to this vertex.
 	 */
 	public void addLabel(int v, String s) {
-		if (v < getNumVertices() && !vertexLabels.containsKey(v)) 
-		{
+		if (v < getNumVertices() && !vertexLabels.containsKey(v))
 			vertexLabels.put(v, s);
-		}
-		else {
+		else
 			System.out.println("ERROR: tried to label a vertex that is out of range or already labeled");
-		}
 	}
 	
 	/**
@@ -205,10 +199,10 @@ public abstract class Graph {
 	 * @return The String label of this vertex 
 	 */
 	public String getLabel(int v) {
-		if (vertexLabels.containsKey(v)) {
+		if (vertexLabels.containsKey(v))
 			return vertexLabels.get(v);
-		}
-		else return null;
+		else
+			return null;
 	}
 
 	/**
